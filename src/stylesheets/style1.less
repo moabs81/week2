@@ -1,5 +1,84 @@
-/*Attribute Styles*/
+/*--Vars and Rules--*/
 
-/*Class Styles*/
+@bodyTextColor : #FCFBE3;
+@backgroundColor: #293134;
+@highlightColor: #93C763;
+@floatDivColor : rgba(0, 0, 0, 0.4);
+#buttonPadding() {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
-/*ID Styles*/
+#menuTransition() {
+    -webkit-transition: 0.3s;
+}
+
+
+/*--Applied Styles--*/
+
+body {
+    background-image: url('/src/imgs/paint.jpg');
+    background-attachment: fixed;
+    background-position: right top;
+    margin-top: 0;
+    margin-left: 0;
+    .titleContainer {
+        position: fixed;
+        width: 100%;
+        height: 125px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgba(0, 0, 0, 0.0);
+        #menuTransition;
+        .menu-content {
+            display: inline-block;
+        }
+        .left-logo {
+            margin-left: 10%;
+            margin-top: -50px;
+            width: auto;
+            height: auto;
+        }
+        .right-menu {
+            margin-right: 15px;
+            margin-top: 50px;
+            float: right;
+            .right-menu-item {
+                display: inline-block;
+                #buttonPadding;
+                color: @bodyTextColor;
+                #menuTransition;
+            }
+        }
+    }
+    .titleContainerSolid {
+        background-color: @backgroundColor !important;
+        .right-menu-item-solid {
+            color: @highlightColor;
+            border: 1px solid;
+        }
+    }
+    .bodyContainer {
+        color: @bodyTextColor;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        padding-top: 200px;
+        .formDiv {
+            background-color: @floatDivColor;
+            width: 20%;
+            margin-right: auto;
+            padding: 15px;
+            .form1Input {
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+        .scrollingContent {
+            padding: 50px;
+            background-color: @floatDivColor;
+        }
+    }
+}

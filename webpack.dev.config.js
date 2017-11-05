@@ -10,7 +10,9 @@ module.exports = {
         filename: 'devBundle.js'
     },
     plugins: [
-        new htmlWebpackPlugin({ template: './src/views/index.html' }),
+        new htmlWebpackPlugin({
+            template: './src/views/index.html'
+        }),
         new webpack.ProvidePlugin({
             'window.jQuery': 'jQuery',
             'window.$': 'jQuery',
@@ -21,7 +23,16 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.js$/,
-                use: { loader: 'babel-loader' }
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.(jpg|jpeg|png|svg)$/,
+                use: {
+                    loader: 'file-loader'
+                },
+                include: path.join(__dirname, 'src/imgs/')
             },
             {
                 test: /\.less$/,
